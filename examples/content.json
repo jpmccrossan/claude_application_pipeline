@@ -1,0 +1,45 @@
+{
+  "company": "Harbour Data Co",
+  "role": "Data Engineer",
+  "url": "https://example.com/jobs/data-engineer",
+  "hiring_manager": "Priya Shah",
+  "addressee_confidence": "high",
+  "contact_email": "",
+  "fit": "strong",
+  "deadline": "",
+  "location": "Leeds, hybrid",
+  "apply_how": "Apply on the company portal; CV and cover letter as separate PDFs",
+  "todo": ["This is example content for the self-test."],
+  "tagline": "Data Engineer · Python Pipelines · AWS",
+  "summary_1": "I build **reliable data pipelines** in Python that teams use every day, and I keep them running after launch.",
+  "summary_2": "Day to day I work across **Python, SQL and AWS**, turning manual reporting into **automated, tested pipelines**. At Northwind Analytics I moved weekly reports from spreadsheets to a **scheduled data platform** and trained colleagues to use it.",
+  "experience": {
+    "northwind": [
+      "Replaced weekly spreadsheet reports with scheduled **Python** ETL jobs on **AWS**, tested in CI.",
+      "Built a **FastAPI** service and **PostgreSQL** schema that serve sales data to 40 client dashboards.",
+      "Wrote the team's code review guide and run fortnightly knowledge-sharing sessions."
+    ],
+    "brightline": [
+      "Cleaned and merged data from three legacy systems into one reporting database.",
+      "Automated route performance reporting with **Python** and **SQL**, saving the team a day a week.",
+      "Built **Power BI** dashboards used by depot managers each morning."
+    ]
+  },
+  "skills_order": {
+    "Languages": ["Python", "SQL", "JavaScript"],
+    "Backend & data": ["ETL pipelines", "PostgreSQL", "Pandas", "FastAPI", "REST APIs"]
+  },
+  "recipient_names": "Priya Shah",
+  "company_line": "Harbour Data Co · Leeds",
+  "role_banner": "DATA ENGINEER",
+  "salutation": "Dear Priya,",
+  "p1": "I am applying for the **Data Engineer** role. You need reporting data that arrives on time and that teams can trust, and I build exactly that: scheduled, tested Python pipelines that people rely on every morning.",
+  "p2": "Your first need is moving reporting off manual spreadsheets. At **Northwind Analytics** I replaced the team's weekly spreadsheet reports with scheduled **Python** ETL jobs on **AWS**, tested in CI with **GitHub Actions**. The reports now arrive without anyone running them. I can do the same for your client reporting, starting with the reports that take the most manual time today.",
+  "p3": "Your second need is clean data from several sources. At **Brightline Logistics** I merged data from three legacy systems into one reporting database, and built the **Power BI** dashboards depot managers used each morning. That work taught me to check data at the point it enters a pipeline, which is where most reporting errors start.",
+  "p5": "I take ownership of what I build and keep it running after launch. I wrote my team's code review guide and run regular knowledge-sharing sessions. I hold a BSc in Computer Science from the University of Leeds, and I can start with one month's notice.",
+  "p6": "I would welcome a conversation about how your team plans to move client reporting onto the new data platform.",
+  "short_col1_head": "RELIABLE PIPELINES",
+  "short_col1": "Scheduled **Python** ETL on **AWS**, tested in CI, replacing manual weekly reports.",
+  "short_col2_head": "CLEAN, JOINED DATA",
+  "short_col2": "Three legacy systems merged into one reporting database; **Power BI** dashboards used daily."
+}

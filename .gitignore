@@ -1,0 +1,17 @@
+# Everything personal lives here: profile, CV, photo, API key, applications, tracker
+data/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Web UI sources build into web/dist, which IS committed so users do not need Node
+web/node_modules/
+web/*.tsbuildinfo
+
+# OS and editors
+.DS_Store
+.idea/
+.vscode/
+*.swp

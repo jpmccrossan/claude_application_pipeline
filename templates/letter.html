@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ p.name }} - Cover letter</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  body { margin:0; background:#e4e2e0; display:flex; justify-content:center; padding:40px; font-family:'Hanken Grotesk',sans-serif; color:#16151a; }
+  a { color:#1626a3; text-decoration:none; }
+  @media print { body { background:none; padding:0; } @page { size:A4; margin:0; } }
+</style>
+</head>
+<body>
+<div style="width:794px;height:1123px;background:#f7f6f2;color:#16151a;box-shadow:0 10px 40px rgba(0,0,0,0.18);box-sizing:border-box;display:flex;flex-direction:column;font-size:12.5px;line-height:1.5;position:relative;overflow:hidden">
+  <div style="background:#16151a;color:#f7f6f2;padding:6px 14px;display:flex;align-items:center;gap:10px">
+    <div aria-hidden="true" style="display:flex;gap:5px;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#2036d9;display:inline-block"></span><span style="width:8px;height:8px;border-radius:50%;background:#e9ecfa;display:inline-block"></span><span style="width:8px;height:8px;border-radius:50%;background:#9a99a4;display:inline-block"></span></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.04em;font-weight:600">{{ topbar }}</div>
+    {% if p.banner %}<div style="margin-left:auto;display:flex;align-items:center;gap:8px;background:linear-gradient(120deg,#2b47f0,#1c2fc4);padding:3px 9px;white-space:nowrap"><span aria-hidden="true" style="width:6px;height:6px;background:#f7f6f2;display:inline-block;border-radius:50%"></span><span style="font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700">{{ p.banner }}</span></div>{% else %}<div style="margin-left:auto"></div>{% endif %}
+    <div style="display:flex;align-items:center;gap:9px" aria-hidden="true"><span style="width:9px;height:1.5px;background:#f7f6f2;display:inline-block"></span><span style="width:8px;height:8px;border:1.5px solid #f7f6f2;display:inline-block;box-sizing:border-box"></span><span style="font-size:12px;line-height:0.8;font-weight:600">×</span></div>
+  </div>
+  <div style="background:linear-gradient(90deg,#d8dffa 0%,#e9ecfa 55%,#f2f1fb 100%);padding:8px 36px;display:flex;align-items:center;border-bottom:2px solid #2036d9">
+    <div style="font-size:10.5px;font-weight:600;white-space:nowrap;overflow:hidden">{% for item in p.contact %}{% if not loop.first %} · {% endif %}{% if item.url %}<a href="{{ item.url }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}{% endfor %}</div>
+  </div>
+  <div style="padding:22px 36px 0;display:flex;flex-direction:column;flex:1;min-height:0;position:relative">
+    <div aria-hidden="true" style="position:absolute;top:0;right:0;width:250px;height:280px;opacity:0.5;-webkit-mask:linear-gradient(250deg,black 20%,transparent 65%);mask:linear-gradient(250deg,black 20%,transparent 65%);background:radial-gradient(circle,#2036d9 24%,transparent 28%) 0 0 / 9px 9px"></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;position:relative;z-index:1">
+      <div>
+        <h1 style="font-family:'Hanken Grotesk',sans-serif;font-size:34px;margin:0;letter-spacing:-0.025em;line-height:1;font-weight:800">{{ name_first }} <span style="color:#2036d9">{{ name_last }}</span></h1>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;margin-top:8px;font-weight:600;letter-spacing:0.02em;color:#1626a3">{{ tagline }}</div>
+      </div>
+      <div style="text-align:right;font-size:10.5px;line-height:1.6;color:#6b6a72;padding-top:4px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:#1626a3;font-weight:700">{{ letter_date }}</div>
+        <div style="font-weight:700;color:#16151a;font-size:12px;margin-top:4px">{{ recipient_names }}</div>
+        <div>{{ company_line }}</div>
+      </div>
+    </div>
+    <div style="display:flex;border-bottom:2px solid #16151a;margin:16px 0 12px"><span style="background:#16151a;color:#f7f6f2;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:3px 9px">Application: {{ role_banner }}</span></div>
+    <div style="display:flex;flex-direction:column;gap:9px;font-size:12.5px;line-height:1.55;text-wrap:pretty;position:relative;max-width:660px">
+      <p style="margin:0">{{ salutation }}</p>
+      {% for para in paragraphs %}<p style="margin:0">{{ para|md }}</p>
+      {% endfor %}
+      <p style="margin:0">{{ signoff }}</p>
+    </div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:12px;position:relative">
+      <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em">{{ p.name }}</div>
+      <div aria-hidden="true" style="flex:1;height:2px;background:#2036d9"></div>
+    </div>
+    <div style="margin:auto -36px 0;border-top:2px solid #2036d9;background:#dde2f7;padding:10px 36px 12px">
+      <div style="display:flex;border-bottom:2px solid #2036d9;margin-bottom:7px"><span style="background:#2036d9;color:#f7f6f2;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:3px 9px">In short</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:20px;font-size:10px;line-height:1.45">
+        <div><div style="font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#1626a3;margin-bottom:3px">{{ short_col1_head }}</div><div style="text-wrap:pretty">{{ short_col1|md }}</div></div>
+        <div><div style="font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#1626a3;margin-bottom:3px">{{ short_col2_head }}</div><div style="text-wrap:pretty">{{ short_col2|md }}</div></div>
+        <div><div style="font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#1626a3;margin-bottom:3px">{{ availability_heading }}</div><div style="text-wrap:pretty">{{ availability|md }}</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

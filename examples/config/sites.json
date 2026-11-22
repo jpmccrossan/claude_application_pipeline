@@ -1,0 +1,23 @@
+[
+  {
+    "id": "greenhouse",
+    "name": "Company boards on Greenhouse",
+    "type": "greenhouse",
+    "enabled": true,
+    "boards": []
+  },
+  {
+    "id": "lever",
+    "name": "Company boards on Lever",
+    "type": "lever",
+    "enabled": false,
+    "companies": []
+  },
+  {
+    "id": "ashby",
+    "name": "Company boards on Ashby",
+    "type": "ashby",
+    "enabled": false,
+    "companies": []
+  }
+]

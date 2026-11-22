@@ -1,0 +1,76 @@
+{
+  "name": "Sam Rivera",
+  "headline": "Python Developer · Data Pipelines · Automation",
+  "banner": "Open to work · 2026",
+  "contact": [
+    {"text": "sam.rivera@example.com", "url": "mailto:sam.rivera@example.com"},
+    {"text": "+44 20 7946 0000"},
+    {"text": "github.com/sam-rivera-example", "url": "https://github.com/sam-rivera-example"},
+    {"text": "Leeds, UK"}
+  ],
+  "summary": [
+    "I build **data pipelines and internal tools** in Python that teams rely on every day, and I keep them running after launch.",
+    "Day to day I work across **Python, SQL and cloud services**, turning manual reporting into **automated, tested pipelines**. At Northwind Analytics I moved the team's weekly reports from spreadsheets to a **scheduled data platform** and trained colleagues to use it."
+  ],
+  "highlight": "Based in Leeds, open to hybrid roles in the North of England. One month's notice.",
+  "experience": [
+    {
+      "id": "northwind",
+      "title": "Python Developer",
+      "org": "Northwind Analytics",
+      "dates": "Mar 2024 – present",
+      "context": "Data platform team of six, serving retail clients",
+      "bullets": [
+        "Built a **FastAPI** service and **PostgreSQL** schema that serve sales data to 40 client dashboards.",
+        "Replaced weekly spreadsheet reports with scheduled **Python** ETL jobs on **AWS**, tested in CI.",
+        "Wrote the team's code review guide and run fortnightly knowledge-sharing sessions."
+      ]
+    },
+    {
+      "id": "brightline",
+      "title": "Junior Data Analyst",
+      "org": "Brightline Logistics",
+      "dates": "Sep 2021 – Feb 2024",
+      "context": "Operations analytics for a regional delivery network",
+      "bullets": [
+        "Automated route performance reporting with **Python** and **SQL**, saving the team a day a week.",
+        "Built **Power BI** dashboards used by depot managers each morning.",
+        "Cleaned and merged data from three legacy systems into one reporting database."
+      ],
+      "note": ""
+    }
+  ],
+  "education": [
+    {
+      "title": "BSc Computer Science",
+      "org": "University of Leeds",
+      "dates": "2018 – 2021",
+      "bullets": ["Dissertation: forecasting parcel volumes with gradient-boosted models in Python."]
+    }
+  ],
+  "extras": [
+    {"title": "Volunteer coding mentor, Code Club Leeds", "dates": "2022 – present"}
+  ],
+  "skills": [
+    {"name": "Languages", "style": "fill", "chips": ["Python", "SQL", "JavaScript"]},
+    {"name": "Backend & data", "style": "plain", "chips": ["FastAPI", "PostgreSQL", "Pandas", "ETL pipelines", "REST APIs"]},
+    {"name": "Cloud & tools", "style": "plain", "chips": ["AWS", "Docker", "GitHub Actions", "Power BI"]},
+    {"name": "How I work", "style": "outline", "chips": ["Reliable", "Team-first", "Clear communicator"]}
+  ],
+  "stack_icons": ["python", "javascript", "fastapi", "postgresql", "pandas", "docker", "githubactions"],
+  "languages": "English, native · Spanish, conversational",
+  "references": "Available on request.",
+  "beyond": [
+    {"heading": "Build", "text": "Side projects in my own time: a **home energy dashboard** on a Raspberry Pi, Python and SQLite."},
+    {"heading": "Teamwork", "text": "Volunteer mentor at **Code Club**, teaching children to build their first games in Scratch and Python."},
+    {"heading": "Ask me about", "text": "Fell running in the Yorkshire Dales, and the best bakeries in Leeds."}
+  ],
+  "letter": {
+    "signoff": "Kind regards,",
+    "availability_heading": "Availability",
+    "availability": "One month's notice. Based in **Leeds**, open to hybrid work across the North. **Email** is the best way to reach me.",
+    "default_salutation": "Dear Hiring Manager,"
+  },
+  "accent": "#2036d9",
+  "photo": false
+}

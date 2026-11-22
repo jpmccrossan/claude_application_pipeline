@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ p.name }} - CV</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  body { margin:0; background:#e4e2e0; display:flex; justify-content:center; padding:40px; font-family:'Hanken Grotesk',sans-serif; color:#16151a; }
+  a { color:#1626a3; text-decoration:none; }
+  @media print { body { background:none; padding:0; } @page { size:A4; margin:0; } }
+</style>
+</head>
+<body>
+<div style="width:794px;height:1123px;background:#f7f6f2;color:#16151a;box-shadow:0 10px 40px rgba(0,0,0,0.18);box-sizing:border-box;display:flex;flex-direction:column;font-size:12.5px;line-height:1.5;position:relative;overflow:hidden;font-family:'Hanken Grotesk',sans-serif">
+  <div style="background:#16151a;color:#f7f6f2;padding:6px 14px;display:flex;align-items:center;gap:10px">
+    <div aria-hidden="true" style="display:flex;gap:5px;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#2036d9;display:inline-block"></span><span style="width:8px;height:8px;border-radius:50%;background:#e9ecfa;display:inline-block"></span><span style="width:8px;height:8px;border-radius:50%;background:#9a99a4;display:inline-block"></span></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.04em;font-weight:600">{{ tagline }}</div>
+    {% if p.banner %}<div style="margin-left:auto;display:flex;align-items:center;gap:8px;background:linear-gradient(120deg,#2b47f0,#1c2fc4);padding:3px 9px;white-space:nowrap"><span aria-hidden="true" style="width:6px;height:6px;background:#f7f6f2;display:inline-block;border-radius:50%"></span><span style="font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700">{{ p.banner }}</span></div>{% else %}<div style="margin-left:auto"></div>{% endif %}
+    <div style="display:flex;align-items:center;gap:9px" aria-hidden="true"><span style="width:9px;height:1.5px;background:#f7f6f2;display:inline-block"></span><span style="width:8px;height:8px;border:1.5px solid #f7f6f2;display:inline-block;box-sizing:border-box"></span><span style="font-size:12px;line-height:0.8;font-weight:600">×</span></div>
+  </div>
+  {% if icons %}<div style="display:flex;align-items:center;gap:9px;padding:7px 36px 8px;background:#e9ecfa;border-bottom:2px solid #2036d9">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.1em;color:#6b6a72;text-transform:uppercase;margin-right:4px">Stack</span>
+    {% for icon in icons %}<img src="assets/icons/{{ icon }}.svg" alt="{{ icon }}" style="width:15px;height:15px">
+    {% endfor %}
+  </div>{% endif %}
+  <div style="background:linear-gradient(90deg,#d8dffa 0%,#e9ecfa 55%,#f2f1fb 100%);padding:8px 36px;display:flex;align-items:center;border-bottom:2px solid #2036d9">
+    <div style="font-size:10.5px;font-weight:600;white-space:nowrap;overflow:hidden">{% for item in p.contact %}{% if not loop.first %} · {% endif %}{% if item.url %}<a href="{{ item.url }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}{% endfor %}</div>
+  </div>
+  <div style="padding:12px 36px 0;display:flex;flex-direction:column;flex:1;min-height:0;position:relative">
+    <div aria-hidden="true" style="position:absolute;top:0;right:0;width:250px;height:290px;opacity:0.5;-webkit-mask:linear-gradient(250deg,black 20%,transparent 65%);mask:linear-gradient(250deg,black 20%,transparent 65%);background:radial-gradient(circle,#2036d9 24%,transparent 28%) 0 0 / 9px 9px"></div>
+    <div style="display:grid;grid-template-columns:1fr 176px;grid-template-rows:auto auto;gap:10px 22px;position:relative">
+      <div style="padding-top:6px;grid-column:1;grid-row:1">
+        <h1 style="font-family:'Hanken Grotesk',sans-serif;font-size:34px;margin:0;letter-spacing:-0.025em;line-height:1;font-weight:800">{{ name_first }} <span style="color:#2036d9">{{ name_last }}</span></h1>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;margin-top:8px;font-weight:600;letter-spacing:0.02em;color:#1626a3">{{ tagline }}</div>
+        <div style="margin:8px 0 0;font-size:12px;line-height:1.45;text-wrap:pretty;display:flex;flex-direction:column;gap:5px">
+          {% for para in summary %}<p style="margin:0">{{ para|md }}</p>
+          {% endfor %}
+          {% if p.highlight %}<p style="margin:0;font-weight:700;color:#1626a3">{{ p.highlight|md }}</p>{% endif %}
+        </div>
+      </div>
+      {% if photo_src %}<div style="position:relative;grid-column:2;grid-row:1;align-self:start;justify-self:end;margin:4px 0 0">
+        <div aria-hidden="true" style="position:absolute;right:-6px;top:6px;width:176px;height:168px;background:linear-gradient(160deg,#2b47f0 0%,#2036d9 45%,#1626a3 100%)"></div>
+        <img src="{{ photo_src }}" alt="Portrait of {{ p.name }}" style="width:176px;height:168px;object-fit:cover;display:block;position:relative">
+      </div>{% endif %}
+      <div style="display:flex;flex-direction:column;gap:8px;grid-column:2;grid-row:{{ 2 if photo_src else '1 / span 2' }}">
+        <div>
+          <div style="display:flex;border-bottom:2px solid #16151a;margin-bottom:8px"><span style="background:#16151a;color:#f7f6f2;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:3px 9px">Skills</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;font-size:11px">
+{% for group in skills %}
+            <div><div style="font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#6b6a72;margin-bottom:3px">{{ group.name }}</div><div style="display:flex;flex-wrap:wrap;gap:3px">{% for chip in group.chips %}{% if group.style == "fill" %}<span style="font-size:9.5px;font-weight:700;padding:2px 6px;background:#2036d9;color:#f7f6f2">{{ chip }}</span>{% elif group.style == "outline" %}<span style="font-size:9.5px;font-weight:700;padding:2px 6px;border:1px solid #2036d9;color:#1626a3">{{ chip }}</span>{% else %}<span style="font-size:9.5px;font-weight:500;padding:2px 6px;background:#e6e9fb">{{ chip }}</span>{% endif %}{% endfor %}</div></div>
+{% endfor %}
+          </div>
+        </div>
+        {% if p.languages %}<div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:6px"><span style="width:9px;height:9px;background:#2036d9;display:inline-block"></span><span style="font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">Languages</span></div>
+          <div style="font-size:11px;line-height:1.5">{{ p.languages }}</div>
+        </div>{% endif %}
+        {% if p.references %}<div style="margin-top:auto">
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:4px"><span style="width:9px;height:9px;background:#2036d9;display:inline-block"></span><span style="font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:800">References</span></div>
+          <div style="font-size:11.5px;font-weight:700">{{ p.references }}</div>
+        </div>{% endif %}
+      </div>
+      <div style="grid-column:1;grid-row:2">
+        <div style="display:flex;border-bottom:2px solid #16151a;margin-bottom:10px"><span style="background:#16151a;color:#f7f6f2;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:3px 9px">Experience &amp; Education</span></div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          {% for job in experience %}<div style="border-left:3px solid {{ '#2036d9' if loop.first else '#d5d4dc' }};padding-left:13px">
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline">
+              <div style="font-weight:800;font-size:14px">{{ job.title }}{% if job.org %}, {{ job.org }}{% endif %}</div>
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#1626a3;white-space:nowrap">{{ job.dates }}</div>
+            </div>
+            {% if job.context %}<div style="font-size:11px;color:#6b6a72;margin:1px 0 4px">{{ job.context }}</div>{% endif %}
+            {% if job.bullets %}<ul style="margin:{{ '0' if job.context else '4px 0 0' }};padding-left:13px;list-style:square;display:flex;flex-direction:column;gap:2px;text-wrap:pretty;font-size:11.5px">
+              {% for b in job.bullets %}<li>{{ b|md }}</li>
+              {% endfor %}
+            </ul>{% endif %}
+            {% if job.note %}<div style="margin-top:5px;background:linear-gradient(90deg,#e2e7fb,#f1f1fb);padding:5px 9px;font-size:10.5px;line-height:1.45;text-wrap:pretty">{{ job.note|md }}</div>{% endif %}
+          </div>
+          {% endfor %}
+          {% for ed in p.education %}<div style="border-left:3px solid #d5d4dc;padding-left:13px">
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline">
+              <div style="font-weight:800;font-size:14px">{{ ed.title }}{% if ed.org %}, {{ ed.org }}{% endif %}</div>
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#1626a3;white-space:nowrap">{{ ed.dates }}</div>
+            </div>
+            {% if ed.bullets %}<ul style="margin:4px 0 0;padding-left:13px;list-style:square;display:flex;flex-direction:column;gap:2px;text-wrap:pretty;font-size:11.5px">
+              {% for b in ed.bullets %}<li>{{ b|md }}</li>
+              {% endfor %}
+            </ul>{% endif %}
+          </div>
+          {% endfor %}
+          {% for ex in p.extras %}<div style="border-left:3px solid #d5d4dc;padding-left:13px">
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline">
+              <div style="font-weight:700;font-size:12.5px">{{ ex.title|md }}</div>
+              <div style="font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#1626a3;white-space:nowrap">{{ ex.dates }}</div>
+            </div>
+            {% if ex.text %}<div style="font-size:11px;color:#6b6a72;margin-top:1px">{{ ex.text|md }}</div>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% if beyond %}<div style="margin:auto -36px 0;border-top:2px solid #2036d9;background:linear-gradient(90deg,#d0daf8 0%,#dde2f7 50%,#e9ebfb 100%);padding:9px 36px 10px">
+      <div style="display:flex;border-bottom:2px solid #2036d9;margin-bottom:7px"><span style="background:#2036d9;color:#f7f6f2;font-size:9.5px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:3px 9px">Beyond work</span></div>
+      <div style="display:grid;grid-template-columns:repeat({{ beyond|length }},1fr);gap:18px;font-size:10px;line-height:1.4">
+        {% for b in beyond %}<div><div style="font-weight:700;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#1626a3;margin-bottom:3px">{{ b.heading }}</div><div style="text-wrap:pretty">{{ b.text|md }}</div></div>
+        {% endfor %}
+      </div>
+    </div>{% else %}<div style="margin:auto -36px 0;height:24px"></div>{% endif %}
+  </div>
+</div>
+</body>
+</html>
